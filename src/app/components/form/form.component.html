@@ -1,0 +1,11 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <input formControlName="nombre" placeholder="Nombre" type="text" />
+  <input formControlName="telefono" placeholder="Telefono" type="text" />
+  <input formControlName="correo" placeholder="Correo" type="text" />
+  <input
+    formControlName="fecha_nacimiento"
+    placeholder="Fecha de nacimiento"
+    type="date"
+  />
+  <input [disabled]="form.invalid" type="submit" value="Enviar" />
+</form>

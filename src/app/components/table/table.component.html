@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="alert alert-success alert-dismissible">
+    <button
+      type="button"
+      class="btn btn-close"
+      data-bs-dismiss="alert"
+    ></button>
+  </div>
+
+  <h1>Lista de Contactos</h1>
+  <div class="text-center my-3">
+    <a (click)="newContact()" id="btnAdd" class="btn btn-primary"
+      ><i class="fas fa-user-plus"></i>&nbsp;Añadir contacto</a
+    >
+  </div>
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Telefono</th>
+        <th>Correo</th>
+        <th>FechaNacimiento</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <div class="tbodyContainer">
+        <tr *ngFor="let contact of contacts">
+          <td>
+            <div>{{ contact.id }}</div>
+          </td>
+          <td>
+            {{ contact.nombre }}
+          </td>
+          <td>
+            {{ contact.telefono }}
+          </td>
+          <td>
+            {{ contact.correo }}
+          </td>
+          <td>
+            {{ contact.fecha_nacimiento }}
+          </td>
+          <td>
+            <a (click)="editar(contact.id)" class="btn btn-warning">
+              <i class="fas fa-edit"></i>
+            </a>
+            <a (click)="eliminar(contact.id)" class="btn btn-danger">
+              <i class="fas fa-trash-alt"></i>
+            </a>
+          </td>
+        </tr>
+      </div>
+    </tbody>
+  </table>
+</div>
+
+<app-form *ngIf="switch"> </app-form>

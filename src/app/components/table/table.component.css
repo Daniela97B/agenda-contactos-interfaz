@@ -1,0 +1,14 @@
+tr {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+table {
+  width: 100%;
+}
+
+.tbodyContainer {
+  height: 45vw !important;
+  overflow: scroll;
+}
